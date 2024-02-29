@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="icon" type="image/x-icon" href="img.jpg">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+           
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #4CAF50, #2196F3);
+            color: #fff;
+        }
+
+        #login-form {
+            width: 500px;
+            height: 350px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            margin: auto;
+            text-align: center;
+        }
+
+        h1,h2,h3,h5,h6{
+            color: #2196F3;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input {
+            width: calc(100% - 12px);
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            font-size: 16px;
+        }
+
+        button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button {
+  background-color: #04AA6D;
+  color: black; 
+  border: 2px solid #04AA6D;
+  border-radius: 15px;
+}
+
+button:hover {
+  background-color: white;
+  
+}
+
+        #message {
+            margin-top: 15px;
+            color: #e74c3c;
+            font-size: 14px;
+        }
+
+        #message.success {
+            color: #2ecc71;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        
+    </nav>
+
+    <div id="login-form">
+        <h1>Login</h1>
+        <form id="form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <button type="button" onclick="attemptLogin()">Login</button>
+        </form>
+        <div id="message"></div>
+
+        <script>
+            function attemptLogin() {
+                var username = document.getElementById('username').value;
+                var password = document.getElementById('password').value;
+
+                // Simulate server-side authentication
+                if (username === 'MrSachchidanand' && password === 'shreeram') {
+                    alert('Login successful!', 'success');
+                    window.location.href = 'home.html';
+                }
+                if (username === 'MrNikhil' && password === 'shreeram') {
+                    alert('Login successful!', 'success');
+                    window.location.href = 'home.html';
+                }
+                if (username === 'MrKhusil' && password === 'shreeram') {
+                    alert('Login successful!', 'success');
+                    window.location.href = 'home.html';
+                } 
+                else {
+                    alert('Invalid credentials. Please try again.', 'error');
+                }
+            }
+        
+
+            function displayMessage(message, type) {
+                var messageDiv = document.getElementById('message');
+                messageDiv.textContent = message;
+                messageDiv.className = type;
+
+                // Clear the message after 3 seconds
+                setTimeout(function() {
+                    messageDiv.textContent = '';
+                    messageDiv.className = '';
+                }, 3000);
+            }
+        </script>
+    </div>
+    <footer style="position: fixed; bottom: 0; right: 0; padding: 10px;">
+        <p><h4>Miu Alfha Publications <br>
+            Made by Sachchidanand , Nikhil , Khushil</h4>
+            </p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FILE DOWNLOADER</title>
+    <link rel="icon" type="image/x-icon" href="img.jpg">
+    <style>
+        body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background: linear-gradient(to bottom right, aqua, yellow);
+    display: flex;
+    
+    
+}
+
+
+button {
+background-color: #04AA6D; /* Green */
+border: none;
+color: white;
+padding: 16px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+transition-duration: 0.4s;
+cursor: pointer;
+border-radius: 10px;
+}
+
+button {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #04AA6D;
+}
+
+button:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+h1,h2,h3,h4,h5,h6 {
+ font-family: 'Ubuntu', sans-serif;
+  }
+
+
+
+.download-container {
+    align-items: center;
+    text-align: center;
+    height: 300px;
+    width : 200px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 100px;
+    align-self: center;
+    margin-left:300px;
+   
+}
+
+label {
+    font-size: 25px;
+    margin-top: 15px;
+    display: block;
+    margin-bottom: 10px;
+    
+    
+}
+
+
+select {
+    width: 100%;
+    padding: 20px;
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box;
+    direction: ltr;
+    display: block;
+    height: 75px;
+    
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #04AA6D;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 15px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    height: 25px;
+    width: 250px;
+}
+
+.download-container:hover .download-btn {
+    background-color: #fff;
+    color: #04AA6D;
+    border: 2px solid #04AA6D;
+}
+
+.dropdown-content {
+    display:contents;
+    position:fixed;
+    background-color: lemonchiffon;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    z-index: 5;
+    width: 100%;
+    height: 50%;
+    
+}
+
+.dropdown-content a {
+    color:lightblue;
+    padding: 12px;
+    text-decoration: navajowhite;
+    display: block;
+    transition: background-color 0.4s;
+    border-radius: 15px;
+}
+
+.dropdown-content a:hover {
+    background-color:lightgreen;
+}
+
+.download-container:hover .dropdown-content {
+    display: block;
+    border-radius: 15px;
+}
+
+
+.wrapper {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid lightseagreen;
+    border-radius: 15px;
+  }
+  
+  header {
+    background-color: royalblue;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  input[type="url"] {
+    width: 70%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+  }
+nav{
+    align-self: self-start;
+    margin-right: 200px;
+
+}
+
+  
+    </style>
+</head>
+<body>
+    <nav>
+        
+        <a href='./home.html'>
+            <button><h5>HOME</h5></button>
+        </a>
+        <a href='./links.html'>
+            <button><h5>LINKS</h5></button>
+        </a>
+        
+        
+    </nav>
+    
+<div class="download-container">
+    <label for="fileSelect">Select a File to Downaload:</label>
+    <select id="fileSelect">
+        <option value="https://sachilegend12.github.io/miualfha/sus.py">SHADOW FINDER</option>
+        <option value="https://sachilegend12.github.io/miualfha/omg.py">IP TRACKER</option>
+        <option value="https://sachilegend12.github.io/miualfha/stat.py">STATISTICS </option>
+        <option value="https://sachilegend12.github.io/miualfha/magic_square_solver.py">MAGIC SQUARE SOLVER</option>
+        <option value="https://sachilegend12.github.io/miualfha/base.py">FILE DOWNLOADER IN PYTHON</option>
+    </select>
+    <br>
+    <a href="#" id="downloadBtn" class="download-btn" onclick="downloadSelectedFile()">Download Selected File</a>
+</div>
+
+<script>
+    function downloadSelectedFile() {
+        var fileSelect = document.getElementById('fileSelect');
+        var selectedFile = fileSelect.options[fileSelect.selectedIndex].value;
+
+        // Display the selected file URL in the link
+        document.getElementById('downloadBtn').setAttribute('href', selectedFile);
+    }
+</script>
+
+</body>
+</html>
