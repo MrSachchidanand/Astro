@@ -112,6 +112,10 @@ button:hover {
                 var password = document.getElementById('password').value;
 
                 // Simulate server-side authentication
+                if (username === 'Guest' && password === 'notaadmin') {
+                    alert('Login successful!', 'success');
+                    window.location.href = 'home.html';
+                }
                 if (username === 'MrSachchidanand' && password === 'shreeram') {
                     alert('Login successful!', 'success');
                     window.location.href = 'home.html';
