@@ -3,8 +3,8 @@ import webbrowser
 import os
 import subprocess
 import win32com.client
-
-genai.configure(api_key="AIzaSyDvfxPDMFV1E1-YZaRb9abYqjZeizPTPPU")
+#  https://aistudio.google.com/app/apikey
+genai.configure(api_key="<your-api-key>")
 
 # Set up the model
 generation_config = {
@@ -59,12 +59,7 @@ def process_user_input(user_input):
         webbrowser.get(chrome_path).open(url)
         return "Playing " + query + " on YouTube", True
 
-    # Check if user wants to check unread Gmails
-    elif user_input == "!gmail":
-        outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
-        inbox = outlook.GetDefaultFolder(6)
-        unread_count = len([message for message in inbox.Items if message.UnRead])
-        return f"You have {unread_count} unread emails.", False
+   
 
     # Check if user wants to see all available commands
     elif user_input == "!h":
