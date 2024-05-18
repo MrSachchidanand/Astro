@@ -1,0 +1,8 @@
+# Exported from Render on 2024-05-18T05:08:50Z
+services:
+- type: web
+  name: MrAstro
+  runtime: static
+  repo: https://github.com/MrSachchidanand/Astro
+  staticPublishPath: ./
+version: "1"
